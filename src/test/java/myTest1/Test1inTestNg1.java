@@ -24,7 +24,14 @@ public class Test1inTestNg1 {
 	public void setUp() throws Exception {
 	
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		
+		ChromeOptions options1 = new ChromeOptions();
+		options.addArguments("--no-sandbox");
+            	options.addArguments("--disable-dev-shm-usage");
+            	options.addArguments("--headless");
+		
+		
+		driver = new ChromeDriver(options1);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	
 	}
